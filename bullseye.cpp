@@ -91,20 +91,20 @@ void Lifting() {
                     motor[frontRightLift] = 80*fRL;
                     motor[backRightLift] = 80*bRL;
                     motor[frontLeftLift] = 80*fLL;
-                    motor[backLefttLift] = 80*bLL;
+                    motor[backLeftLift] = 80*bLL;
                     wait1Msec(10);
                     } else if (liftDown) {
                       motor[frontRightLift] = -80*fRL;
                       motor[backRightLift] = -80*bRL;
                       motor[frontLeftLift] = -80*fLL;
-                      motor[backLefttLift] = -80*bLL;
+                      motor[backLeftLift] = -80*bLL;
                       wait1Msec(10);
                     }
         } else {
           motor[frontRightLift] = 0;
           motor[backRightLift] = 0;
           motor[frontLeftLift] = 0;
-          motor[backLefttLift] = 0;
+          motor[backLeftLift] = 0;
           wait1Msec(10);
         }
 }
