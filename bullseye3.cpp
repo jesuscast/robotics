@@ -3,6 +3,11 @@
 #pragma config(Motor,  port3,           backRightLift,     tmotorVex393_MC29, openLoop)
 #pragma config(Motor,  port4,           frontLeftLift,     tmotorVex393_MC29, openLoop)
 #pragma config(Motor,  port5,           backLeftLift,      tmotorVex393_MC29, openLoop)
+#pragma config(Motor,  port6,           leftClaw,      tmotorVex393_MC29, openLoop)
+#pragma config(Motor,  port7,           frontRight,    tmotorVex393_MC29, openLoop)
+#pragma config(Motor,  port8,           backRight,     tmotorVex393_MC29, openLoop)
+#pragma config(Motor,  port9,           frontLeft,     tmotorVex393_MC29, openLoop)
+#pragma config(Motor,  port10,           backLeft,      tmotorVex393_MC29, openLoop)
 
 #pragma platform(VEX)
 
@@ -121,18 +126,14 @@ void ClawMoving(){
         }
         if(openClaw==true && closeClaw==false){
                 motor[leftClaw] = 50;
-                motor[rightClaw] = 50;
                 wait1Msec(200);
                 motor[leftClaw] = 0;
-                motor[rightClaw] = 0;
                 openClaw = false;
         }
         else if(closeClaw==true && openClaw==false){
                 motor[leftClaw] = -50;
-                motor[rightClaw] = -50;
                 wait1Msec(200);
                 motor[leftClaw] = 0;
-                motor[rightClaw] = 0;
                 closeClaw = false;
         }
 }
@@ -205,5 +206,7 @@ task usercontrol()
 
           Joysticking();
                 Lifting();
+                Driving();
+                ClawMoving();
         }
 }
